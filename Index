@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Vida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="menu" onclick="toggleStatus()" class="menu-button">Status</div>
+        <div id="status-panel" class="hidden">
+            <p>Dinheiro: <span id="money">0</span></p>
+            <p>Nível de Procurado: <span id="wanted-level">0</span></p>
+        </div>
+        <div id="start">
+            <h1>Escolha sua facção</h1>
+            <div class="class-option">
+                <button onclick="chooseClass('Civil')">Civil</button>
+            </div>
+            <div class="class-option">
+                <button onclick="chooseClass('Cria da Comunidade')">Cria da Comunidade</button>
+            </div>
+            <div class="class-option">
+                <button onclick="chooseClass('Polícia')">Polícia</button>
+            </div>
+        </div>
+        <div id="gameplay" class="hidden">
+            <h1 id="faction-title"></h1>
+            <h2>Escolha seu local de operação</h2>
+            <button onclick="selectLocation('Escritório')">Escritório</button>
+            <button onclick="selectLocation('Favela')">Favela</button>
+            <button onclick="selectLocation('Quartel')">Quartel</button>
+            <div id="missions" class="hidden">
+                <h3>Missões Disponíveis:</h3>
+                <div id="mission-options"></div>
+                <div id="confirm-mission" class="hidden">
+                    <button onclick="acceptMission()">Confirmar Missão</button>
+                    <button onclick="cancelMission()">Cancelar</button>
+                </div>
+                <p id="mission-result"></p>
+                <p id="mission-sequence" class="hidden"></p>
+                <p id="rewards" class="hidden"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
